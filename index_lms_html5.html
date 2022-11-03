@@ -69,13 +69,19 @@
 
 				<div id="control-progress" class="controlbar-button">
 					<div id="control-pauseplay" class="ignore">
-						<a class="icon play" style="display:none;"></a>
-						<a class="icon pause" style="display:none;"></a>
+						<div class="playbtn progress-bar-button" style="display:none;">
+							<div class="icon play"></div>
+						</div>
+						<div class="pausebtn progress-bar-button" style="display:none;">
+							<div class="icon pause"></div>
+						</div>
 					</div>
 					<div id="progressbar" class="progress-container">
 						<div class="progress-bar"></div>
 					</div>
-					<a class="icon restart" href="javascript:player.restart()"></a>
+					<div class="progress-bar-button restart">
+						<div class="icon restart"></div>
+					</div>
 				</div>
 				<span id="indicator"></span>
 			</div>
@@ -102,6 +108,7 @@
 	var globals = {};
 	try
 	{
+		globals.strTitle = "VAWv1alphav2";
 		globals.bHtml5Supported = true;
 		globals.bLMS = true;
 		globals.bAOSupport = false;
@@ -122,7 +129,7 @@
 		globals.bWarnOnCommitFail = false;
 		globals.strWMode = "window"; // opaque | window (use "window" for optimal performance, opaque for webobject support)
 		globals.bUseHtml5 = true && globals.bHtml5Supported;
-		globals.bUseMobilePlayer = true;
+		globals.bUseMobilePlayer = false;
 		globals.biOS = (navigator.userAgent.indexOf("AppleWebKit/") > -1 && navigator.userAgent.indexOf("Mobile/") > -1);
 		globals.biPad = (navigator.userAgent.indexOf("iPad") > -1);
 	}
